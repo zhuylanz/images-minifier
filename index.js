@@ -1,6 +1,9 @@
 #!/usr/bin/node
 require("./prototype");
 const fs = require("fs-extra");
+const imagemin = require("imagemin");
+const imageminJpegtran = require("imagemin-jpegtran");
+const imageminPngquant = require("imagemin-pngquant");
 
 run();
 
@@ -60,9 +63,28 @@ function isDirectory(path) {
 	return fs.lstatSync(path).isDirectory();
 }
 
-function minifyImages(dir) {
+async function minifyImages(dir) {
 	const targets = extractImagePaths(dir);
-	console.log(targets);
+	for (let target of targets) {
+		compressImage(target);
+	}
+}
+
+async function compressImage(path) {
+	await imagemin([path], {
+		destination: extractDir(path),
+		plugins: [
+			imageminJpegtran(),
+			imageminPngquant({
+				quality: [0.6, 0.8]
+			})
+		]
+	});
+	console.log(`> ${path} --> compressed`);
+}
+
+function extractDir(path) {
+	return path.slice(0, path.lastIndexOf("/"));
 }
 
 function extractImagePaths(dir) {
