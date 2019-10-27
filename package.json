@@ -1,0 +1,66 @@
+{
+	"name": "minify-images",
+	"version": "1.0.0",
+	"description": "images minifier",
+	"main": "index.js",
+	"repository": "https://gitlab.com/zhuylanz/minify-images.git",
+	"author": "Lan Nguyen <zhuylanz@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"start": "forever -c \"nodemon --exitcrash\" index.js",
+		"dev": "nodemon index.js",
+		"test": "jest"
+	},
+	"eslintConfig": {
+		"extends": "eslint:recommended",
+		"env": {
+			"es6": true,
+			"node": true,
+			"jest": true,
+			"jquery": true,
+			"browser": true
+		},
+		"rules": {
+			"no-unused-vars": [
+				"warn",
+				{
+					"ignoreRestSiblings": true
+				}
+			],
+			"no-console": 0
+		},
+		"parser": "babel-eslint",
+		"parserOptions": {
+			"ecmaVersion": 2017
+		}
+	},
+	"nodemonConfig": {
+		"watch": [
+			"*.js"
+		]
+	},
+	"husky": {
+		"hooks": {
+			"pre-push": "yarn test"
+		}
+	},
+	"jest": {
+		"globalSetup": "./tests/_setup.js",
+		"globalTeardown": "./tests/_teardown.js",
+		"testEnvironment": "node",
+		"collectCoverage": true
+	},
+	"devDependencies": {
+		"babel-eslint": "^10.0.2",
+		"eslint": "^6.4.0",
+		"husky": "^2.4.1",
+		"jest": "^24.8.0"
+	},
+	"dependencies": {
+		"forever": "^1.0.0",
+		"fs-extra": "^8.1.0",
+		"nodemon": "^1.19.1",
+		"remove-accents-diacritics": "^1.0.2",
+		"to-case": "^2.0.0"
+	}
+}
