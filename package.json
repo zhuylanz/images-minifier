@@ -9,6 +9,10 @@
 	"scripts": {
 		"test": "jest"
 	},
+	"bin": {
+		"@zhuylanz/images-minifier": "bin/images-minifier",
+		"images-minifier": "bin/images-minifier"
+	},
 	"eslintConfig": {
 		"extends": "eslint:recommended",
 		"env": {
