@@ -7,8 +7,6 @@
 	"author": "Lan Nguyen <zhuylanz@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"start": "forever -c \"nodemon --exitcrash\" index.js",
-		"dev": "nodemon index.js",
 		"test": "jest"
 	},
 	"eslintConfig": {
@@ -57,12 +55,10 @@
 		"jest": "^24.8.0"
 	},
 	"dependencies": {
-		"forever": "^1.0.0",
 		"fs-extra": "^8.1.0",
 		"imagemin": "^7.0.0",
 		"imagemin-jpegtran": "^6.0.0",
 		"imagemin-pngquant": "^8.0.0",
-		"nodemon": "^1.19.1",
 		"remove-accents-diacritics": "^1.0.2",
 		"to-case": "^2.0.0"
 	}
