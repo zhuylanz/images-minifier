@@ -1,9 +1,9 @@
 {
-	"name": "images-minifer",
+	"name": "images-minifier",
 	"version": "1.0.0",
 	"description": "images minifier",
 	"main": "index.js",
-	"repository": "https://gitlab.com/zhuylanz/images-minifer.git",
+	"repository": "https://gitlab.com/zhuylanz/images-minifier.git",
 	"author": "Lan Nguyen <zhuylanz@gmail.com>",
 	"license": "MIT",
 	"scripts": {
