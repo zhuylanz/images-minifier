@@ -25,4 +25,6 @@ const OUT_DIR = cli.input[1];
 const beautifyDir = cli.flags["beautify-dir"];
 console.log(cli.flags);
 
-async function main() {}
+async function main() {
+	
+}
