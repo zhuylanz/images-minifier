@@ -12,7 +12,7 @@ async function compressImage(path) {
 			})
 		]
 	});
-	console.log(`> ${path} --> compressed`);
+	console.green(`> ${path} --> compressed`);
 }
 
 function extractDir(path) {

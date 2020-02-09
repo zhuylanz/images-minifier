@@ -1,7 +1,7 @@
 {
 	"name": "images-minifier",
 	"version": "1.0.0",
-	"description": "images minifier",
+	"description": "Images Minifier",
 	"main": "index.js",
 	"repository": "https://gitlab.com/zhuylanz/images-minifier.git",
 	"author": "Lan Nguyen <zhuylanz@gmail.com>",
@@ -58,10 +58,12 @@
 		"jest": "^24.8.0"
 	},
 	"dependencies": {
+		"cwebp": "^2.0.4",
 		"fs-extra": "^8.1.0",
 		"imagemin": "^7.0.0",
 		"imagemin-jpegtran": "^6.0.0",
 		"imagemin-pngquant": "^8.0.0",
+		"lamodules": "^1.1.115",
 		"meow": "^6.0.0",
 		"remove-accents-diacritics": "^1.0.2",
 		"to-case": "^2.0.0"
