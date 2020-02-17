@@ -36,7 +36,7 @@ function extractImagePaths(dir) {
 }
 
 function isImageFile(path) {
-	if (path.search(/\.jpg|\.png/) > -1) {
+	if (path.search(/\.jpg|\.png|\.jpeg/) > -1) {
 		return true;
 	}
 	return false;
