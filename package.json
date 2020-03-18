@@ -3,7 +3,7 @@
 	"version": "1.1.1",
 	"description": "Images Minifier",
 	"main": "index.js",
-	"repository": "https://gitlab.com/zhuylanz/images-minifier.git",
+	"repository": "https://github.com/zhuylanz/images-minifier.git",
 	"author": "Lan Nguyen <zhuylanz@gmail.com>",
 	"license": "MIT",
 	"scripts": {
