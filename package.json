@@ -40,11 +40,6 @@
 			"*.js"
 		]
 	},
-	"husky": {
-		"hooks": {
-			"pre-push": "yarn test"
-		}
-	},
 	"jest": {
 		"globalSetup": "./tests/_setup.js",
 		"globalTeardown": "./tests/_teardown.js",
