@@ -6,7 +6,7 @@ const { minifyImages } = require("./engine");
 const cli = meow(
 	`
 	Usage
-	  $ imini <input dir> <output dir>
+	  $ imini <input_dir> <output_dir>
 
 	Options
 	  --beautify-dir, -b  Should the output directory be beautified? (default: false)
