@@ -7,9 +7,11 @@ async function minifyImages(dir, { webp } = {}) {
 	const targets = extractImagePaths(dir);
 	for (let target of targets) {
 		if (webp) {
-			webpize(target);
+			await webpize(target);
+			fs.unlinkSync(target);
+		} else {
+			compressImage(target);
 		}
-		compressImage(target);
 	}
 }
 

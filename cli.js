@@ -6,11 +6,11 @@ const { minifyImages } = require("./engine");
 const cli = meow(
 	`
 	Usage
-	  $ images-minifier <input dir> <output dir>
+	  $ imini <input dir> <output dir>
 
 	Options
-	  --beautify-dir, -b  Beautify directories' name
-	  --use-webp, -w  Use WebP
+	  --beautify-dir, -b  Should the output directory be beautified? (default: false)
+	  --use-webp, -w  Convert original images to webp format instead of compressing them.
 `,
 	{
 		flags: {
