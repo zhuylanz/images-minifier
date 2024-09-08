@@ -1,45 +1,37 @@
 #!/usr/bin/env node
-const meow = require("meow");
+const yargs = require("yargs");
+const { hideBin } = require("yargs/helpers");
 const { copyDir, beautifyDirStruct } = require("lamodules").Utils;
 const { minifyImages } = require("./engine");
 
-const cli = meow(
-	`
-	Usage
-	  $ imini <input_dir> <output_dir>
+const argv = yargs(hideBin(process.argv))
+	.usage("Usage: $0 <input_dir> <output_dir>")
+	.option("beautify-dir", {
+		alias: "b",
+		type: "boolean",
+		description: "Should the output directory be beautified?",
+		default: false
+	})
+	.option("use-webp", {
+		alias: "w",
+		type: "boolean",
+		description:
+			"Convert original images to webp format instead of compressing them.",
+		default: false
+	})
+	.demandCommand(2, "You need to specify both input and output directories")
+	.help().argv;
 
-	Options
-	  --beautify-dir, -b  Should the output directory be beautified? (default: false)
-	  --use-webp, -w  Convert original images to webp format instead of compressing them.
-`,
-	{
-		flags: {
-			"beautify-dir": {
-				type: "boolean",
-				alias: "b"
-			},
-			"use-webp": {
-				type: "boolean",
-				alias: "w"
-			}
-		}
-	}
-);
-
-const IN_DIR = cli.input[0];
-const OUT_DIR = cli.input[1];
+const IN_DIR = argv._[0];
+const OUT_DIR = argv._[1];
 const FLAGS = {
-	beautifyDir: cli.flags.beautifyDir,
-	useWebp: cli.flags.useWebp
+	beautifyDir: argv.beautifyDir,
+	useWebp: argv.useWebp
 };
 
 main();
 
 async function main() {
-	if (cli.input.length == 0) {
-		console.log(cli.help.replace("\n", ""));
-	}
-
 	if (OUT_DIR) {
 		await copyDir(IN_DIR, OUT_DIR);
 		if (FLAGS.beautifyDir) {
