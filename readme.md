@@ -35,3 +35,8 @@ or to convert images to webp format:
 ```bash
 imini --use-webp ./images ./compressed-images
 ```
+
+## Buy me a coffee
+If you like this tool, consider buying me a coffee. Thanks a bunch!
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://buymeacoffee.com/zhuylanz)
