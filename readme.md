@@ -37,6 +37,7 @@ imini --use-webp ./images ./compressed-images
 ```
 
 ## Buy me a coffee
+
 If you like this tool, consider buying me a coffee. Thanks a bunch!
 
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://buymeacoffee.com/zhuylanz)
+[![Buy Me a Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/zhuylanz)
