@@ -1,8 +1,8 @@
 # Images Minifier
 
-This program is a CLI tool that minifies images in a given directory.
+`images-minifier` is a small CLI that copies an image directory, then compresses the copied images or converts them to WebP.
 
-Instead of compressing 1 image at a time, this program compresses all images in a directory at once. It will make a copy of the original folder and compress the images in the new folder making sure the original images are not lost.
+It works on a whole folder at once, so your original images stay untouched.
 
 ## Installation
 
@@ -16,24 +16,49 @@ npm install -g images-minifier
 imini <input_dir> <output_dir>
 ```
 
-**Some options:**
+## Options
 
 `--beautify-dir, -b`
-Should the output directory be beautified? (default: false)
+Beautify the output directory structure. Default: `false`
 
 `--use-webp, -w`
-Convert original images to webp format instead of compressing them.
+Convert images to `.webp` instead of compressing their original format.
+This now works after a normal `npm install` with no extra WebP package to install.
 
-## Example
+## Examples
 
 ```bash
 imini ./images ./compressed-images
 ```
 
-or to convert images to webp format:
+Convert everything to WebP:
 
 ```bash
 imini --use-webp ./images ./compressed-images
+```
+
+Beautify the copied folder structure before processing:
+
+```bash
+imini --beautify-dir ./images ./compressed-images
+```
+
+## Programmatic usage
+
+```js
+const { minifyImages } = require("images-minifier");
+
+await minifyImages("./compressed-images", { webp: true });
+```
+
+## Publish checklist
+
+Before publishing:
+
+```bash
+npm test
+npm pack --dry-run
+npm publish
 ```
 
 ## Buy me a coffee

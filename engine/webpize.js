@@ -1,9 +1,8 @@
-const CWebp = require("cwebp").CWebp;
+const sharp = require("sharp");
 
 async function webpize(path) {
-	const encoder = new CWebp(path);
 	try {
-		await encoder.write(path.replace(/\.jpg|\.png|\.jpeg/, ".webp"));
+		await sharp(path).webp().toFile(path.replace(/\.jpg|\.png|\.jpeg/, ".webp"));
 		console.green("> webpize " + path);
 	} catch (e) {
 		console.log("webpize Error -->");
